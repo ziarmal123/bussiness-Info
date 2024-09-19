@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "business-info",
-    "slug": "business-info",
+    "name": "businessinfo",
+    "slug": "businessinfo",
     "version": "1.0.0",
+    "owner": "ziarmal",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -19,7 +20,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.ziarmal.businessinfo"
     },
     "web": {
       "bundler": "metro",
@@ -27,10 +32,24 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "1e091703-9af6-4e65-8e75-b43aabaedd0f"
+      }
     }
   }
 }
